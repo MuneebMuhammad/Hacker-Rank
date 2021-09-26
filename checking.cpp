@@ -10,7 +10,7 @@ vector<int> rotateLeft(int d, vector<int> arr) {
     vector<int> shift(size);
     int change;
     for (int i = 0; i < size; i++) {
-        cout << i << " ";
+        cout << i << "  ";
         change = i - d;
         if (change < 0) {
             change = change + size;
