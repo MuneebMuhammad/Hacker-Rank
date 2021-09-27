@@ -7,13 +7,16 @@ long arrayManipulation(int n, vector<vector<int>> queries) {
         int a = queries[i][0];
         int b = queries[i][1];
         int k = queries[i][2];
-        for (int j=a; j<=b; j++){
-            ans[j] += k;
-        }
+        queries[i][a] += k; 
+	queries[i][b+1] -= k;
     }
     // checks for maximum value in 1D array
     for (int i = 0; i< n+1; i++){
-        if (ans[i] > max){
+	int c =0;
+	for (int j = 0; j<=i){
+		c+=ans[j];
+		}
+        if (c > max){
             max = ans[i];
         }
     }
